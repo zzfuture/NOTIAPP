@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class HiloRespuestaNotificaciones
+    public class HiloRespuestaNotificacion : BaseModel
     {
         public string NombreTipo { get; set; }
         public DateOnly FechaCreacion { get; set; }

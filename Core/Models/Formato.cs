@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class Radicados : BaseModel
+    public class Formato : BaseModel
     {
+        public string NombreFormato { get; set; }
         public DateOnly FechaCreacion { get; set; }
         public DateOnly FechaModificacion { get; set; }
     }

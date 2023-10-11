@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class TipoRequerimiento
+    public class TipoRequerimiento : BaseModel
     {
         public string Nombre { get; set; }
         public DateOnly FechaCreacion { get; set; }

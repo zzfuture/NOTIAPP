@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class Rolvsmaestro : BaseModel
+    public class RolVsMaestro : BaseModel
     {
-        
+        public int IdRol { get; set; }
+        public int IdMaestro { get; set; }
+        public DateOnly FechaCreacion { get; set; }
+        public DateOnly FechaModificacion { get; set; }
     }
 }

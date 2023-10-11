@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class EstadoNotificacion
+    public class EstadoNotificacion : BaseModel
     {
         public string NombreEstado { get; set; }
         public DateOnly FechaCreacion { get; set; }

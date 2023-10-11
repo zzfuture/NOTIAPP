@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class Modulonotificaciones : BaseModel
+    public class ModuloNotificacion : BaseModel
     {
         public string AsuntoNotificacion { get; set; }
         public int IdtpoNotificacion { get; set; }
