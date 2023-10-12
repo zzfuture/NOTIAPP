@@ -9,7 +9,6 @@ namespace Core.Models
     {
         public string NombreUsuario { get; set; }
         public int DescAccion { get; set; }
-        public DateOnly FechaCreacion { get; set; }
-        public DateOnly FechaModificacion { get; set; }
+        public ICollection<Blockchain> Blockchains { get; set; }
     }
 }

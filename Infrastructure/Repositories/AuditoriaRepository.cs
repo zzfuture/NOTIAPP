@@ -19,7 +19,9 @@ namespace Infrastructure.Repositories
         }
         public override async Task<IEnumerable<Auditoria>> GetAllAsync()
         {
-            return await _context.Auditorias.ToListAsync();
+            return await _context.Auditorias
+                .Include(h => h.Blockchains)
+                .ToListAsync();
         }
         public override async Task<(int totalRegistros, IEnumerable<Auditoria> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,

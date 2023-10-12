@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class RolVsMaestro : BaseModel
+    public class MaestroVsSubModulo : BaseModel
     {
-        public int IdRol { get; set; }
-        public Rol Roles { get; set; }
         public int IdMaestro { get; set; }
         public ModuloMaestro ModuloMaestros { get; set; }
-
+        public int Submodulo { get; set; }
+        public SubModulo SubModulos { get; set; }
+        public ICollection<GenericoVsSubModulo> GenericoVsSubModulos { get; set; }
     }
 }

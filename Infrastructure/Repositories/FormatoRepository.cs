@@ -19,7 +19,9 @@ namespace Infrastructure.Repositories
         }
         public override async Task<IEnumerable<Formato>> GetAllAsync()
         {
-            return await _context.Formatos.ToListAsync();
+            return await _context.Formatos
+            .Include(x => x.ModuloNotificaciones)
+            .ToListAsync();
         }
         public override async Task<(int totalRegistros, IEnumerable<Formato> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,

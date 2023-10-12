@@ -8,7 +8,6 @@ namespace Core.Models
     public class EstadoNotificacion : BaseModel
     {
         public string NombreEstado { get; set; }
-        public DateOnly FechaCreacion { get; set; }
-        public DateOnly FechaModificacion { get; set; }
+        public ICollection<ModuloNotificacion> ModuloNotificaciones { get; set; }
     }
 }

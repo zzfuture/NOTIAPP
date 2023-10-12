@@ -19,7 +19,8 @@ namespace Infrastructure.Repositories
         }
         public override async Task<IEnumerable<ModuloNotificacion>> GetAllAsync()
         {
-            return await _context.ModuloNotificaciones.ToListAsync();
+            return await _context.ModuloNotificaciones
+            .ToListAsync();
         }
         public override async Task<(int totalRegistros, IEnumerable<ModuloNotificacion> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,

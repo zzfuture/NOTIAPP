@@ -9,30 +9,30 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class PermisoGenericoRepository : GenericRepository<PermisoGenerico>, IPermisoGenerico
+    public class RolRepository : GenericRepository<Rol>, IRol
     {
         private readonly NotiApiContext _context;
 
-        public PermisoGenericoRepository(NotiApiContext context) : base(context)
+        public RolRepository(NotiApiContext context) : base(context)
         {
             _context = context;
         }
-        public override async Task<IEnumerable<PermisoGenerico>> GetAllAsync()
+        public override async Task<IEnumerable<Rol>> GetAllAsync()
         {
-            return await _context.PermisoGenericos
+            return await _context.Roles
             .Include(x => x.GenericoVsSubModulos)
             .ToListAsync();
         }
-        public override async Task<(int totalRegistros, IEnumerable<PermisoGenerico> registros)> GetAllAsync( //Sobrecarga de metodos
+        public override async Task<(int totalRegistros, IEnumerable<Rol> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,
             int pageSize,
             string search
             )
             {
-                var query = _context.PermisoGenericos as IQueryable<PermisoGenerico>;
+                var query = _context.Roles as IQueryable<Rol>;
                 if (!string.IsNullOrEmpty(search))
                 {
-                    query = query.Where(p => p.NombrePermiso.ToLower().Contains(search));
+                    query = query.Where(p => p.Nombre.ToLower().Contains(search));
                 }
                 query = query.OrderBy(p => p.Id);
                 var totalRegistros = await query.CountAsync();

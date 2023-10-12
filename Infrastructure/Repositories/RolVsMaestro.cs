@@ -9,30 +9,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class PermisoGenericoRepository : GenericRepository<PermisoGenerico>, IPermisoGenerico
+    public class RolVsMaestroRepository : GenericRepository<RolVsMaestro>, IRolVsMaestro
     {
         private readonly NotiApiContext _context;
 
-        public PermisoGenericoRepository(NotiApiContext context) : base(context)
+        public RolVsMaestroRepository(NotiApiContext context) : base(context)
         {
             _context = context;
         }
-        public override async Task<IEnumerable<PermisoGenerico>> GetAllAsync()
+        public override async Task<IEnumerable<RolVsMaestro>> GetAllAsync()
         {
-            return await _context.PermisoGenericos
-            .Include(x => x.GenericoVsSubModulos)
-            .ToListAsync();
+            return await _context.RolVsMaestros.ToListAsync();
         }
-        public override async Task<(int totalRegistros, IEnumerable<PermisoGenerico> registros)> GetAllAsync( //Sobrecarga de metodos
+        public override async Task<(int totalRegistros, IEnumerable<RolVsMaestro> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,
             int pageSize,
             string search
             )
             {
-                var query = _context.PermisoGenericos as IQueryable<PermisoGenerico>;
+                var query = _context.RolVsMaestros as IQueryable<RolVsMaestro>;
                 if (!string.IsNullOrEmpty(search))
                 {
-                    query = query.Where(p => p.NombrePermiso.ToLower().Contains(search));
+                    query = query.Where(p => p.IdRol.ToString().Contains(search));
                 }
                 query = query.OrderBy(p => p.Id);
                 var totalRegistros = await query.CountAsync();

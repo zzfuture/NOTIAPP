@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Interfaces;
@@ -19,7 +20,10 @@ namespace Infrastructure.Repositories
         }
         public override async Task<IEnumerable<ModuloMaestro>> GetAllAsync()
         {
-            return await _context.ModuloMaestros.ToListAsync();
+            return await _context.ModuloMaestros
+            .Include(x => x.RolVsMaestros)
+            .Include(x => x.MaestroVsSubModulos)
+            .ToListAsync();
         }
         public override async Task<(int totalRegistros, IEnumerable<ModuloMaestro> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,

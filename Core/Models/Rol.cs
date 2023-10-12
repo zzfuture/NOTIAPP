@@ -8,7 +8,6 @@ namespace Core.Models
     public class Rol : BaseModel
     {
         public string Nombre { get; set; }
-        public DateOnly FechaCreacion { get; set; }
-        public DateOnly FechaModificacion { get; set; }
+        public ICollection<GenericoVsSubModulo> GenericoVsSubModulos { get; set; }
     }
 }

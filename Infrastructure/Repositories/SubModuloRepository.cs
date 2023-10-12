@@ -9,28 +9,30 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class MaestroVsModuloRepository : GenericRepository<MaestroVsModulo>, IMaestroVsModulo
+    public class SubModuloRepository : GenericRepository<SubModulo>, ISubModulo
     {
         private readonly NotiApiContext _context;
 
-        public MaestroVsModuloRepository(NotiApiContext context) : base(context)
+        public SubModuloRepository(NotiApiContext context) : base(context)
         {
             _context = context;
         }
-        public override async Task<IEnumerable<MaestroVsModulo>> GetAllAsync()
+        public override async Task<IEnumerable<SubModulo>> GetAllAsync()
         {
-            return await _context.MaestroVsModulos.ToListAsync();
+            return await _context.SubModulos
+            .Include(x => x.MaestroVsSubModulos)
+            .ToListAsync();
         }
-        public override async Task<(int totalRegistros, IEnumerable<MaestroVsModulo> registros)> GetAllAsync( //Sobrecarga de metodos
+        public override async Task<(int totalRegistros, IEnumerable<SubModulo> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,
             int pageSize,
             string search
             )
             {
-                var query = _context.MaestroVsModulos as IQueryable<MaestroVsModulo>;
+                var query = _context.SubModulos as IQueryable<SubModulo>;
                 if (!string.IsNullOrEmpty(search))
                 {
-                    query = query.Where(p => p.IdMaestro.ToString().Contains(search));
+                    query = query.Where(p => p.NombreSubmodulo.ToLower().Contains(search));
                 }
                 query = query.OrderBy(p => p.Id);
                 var totalRegistros = await query.CountAsync();

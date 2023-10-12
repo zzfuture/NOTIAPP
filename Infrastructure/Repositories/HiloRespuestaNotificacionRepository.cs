@@ -19,7 +19,10 @@ namespace Infrastructure.Repositories
         }
         public override async Task<IEnumerable<HiloRespuestaNotificacion>> GetAllAsync()
         {
-            return await _context.HiloRespuestaNotificaciones.ToListAsync();
+            return await _context.HiloRespuestaNotificaciones
+            .Include(x => x.ModuloNotificaciones)
+            .Include(b => b.Blockchains)
+            .ToListAsync();
         }
         public override async Task<(int totalRegistros, IEnumerable<HiloRespuestaNotificacion> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,

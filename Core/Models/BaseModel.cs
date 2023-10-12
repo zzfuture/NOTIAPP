@@ -9,5 +9,7 @@ namespace Core.Models
     public class BaseModel
     {
         public int Id { get; set; }
+        public DateOnly FechaCreacion { get; set; }
+        public DateOnly FechaModificacion { get; set; }
     }
 }

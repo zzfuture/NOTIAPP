@@ -9,30 +9,30 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class PermisoGenericoRepository : GenericRepository<PermisoGenerico>, IPermisoGenerico
+    public class RadicadoRepository : GenericRepository<Radicado>, IRadicado
     {
         private readonly NotiApiContext _context;
 
-        public PermisoGenericoRepository(NotiApiContext context) : base(context)
+        public RadicadoRepository(NotiApiContext context) : base(context)
         {
             _context = context;
         }
-        public override async Task<IEnumerable<PermisoGenerico>> GetAllAsync()
+        public override async Task<IEnumerable<Radicado>> GetAllAsync()
         {
-            return await _context.PermisoGenericos
-            .Include(x => x.GenericoVsSubModulos)
+            return await _context.Radicados
+            .Include(x => x.ModuloNotificaciones)
             .ToListAsync();
         }
-        public override async Task<(int totalRegistros, IEnumerable<PermisoGenerico> registros)> GetAllAsync( //Sobrecarga de metodos
+        public override async Task<(int totalRegistros, IEnumerable<Radicado> registros)> GetAllAsync( //Sobrecarga de metodos
             int pageIndex,
             int pageSize,
             string search
             )
             {
-                var query = _context.PermisoGenericos as IQueryable<PermisoGenerico>;
+                var query = _context.Radicados as IQueryable<Radicado>;
                 if (!string.IsNullOrEmpty(search))
                 {
-                    query = query.Where(p => p.NombrePermiso.ToLower().Contains(search));
+                    query = query.Where(p => p.Id.ToString().Contains(search));
                 }
                 query = query.OrderBy(p => p.Id);
                 var totalRegistros = await query.CountAsync();

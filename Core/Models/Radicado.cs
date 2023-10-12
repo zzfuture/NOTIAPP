@@ -7,7 +7,6 @@ namespace Core.Models
 {
     public class Radicado : BaseModel
     {
-        public DateOnly FechaCreacion { get; set; }
-        public DateOnly FechaModificacion { get; set; }
+        public ICollection<ModuloNotificacion> ModuloNotificaciones { get; set; }
     }
 }
