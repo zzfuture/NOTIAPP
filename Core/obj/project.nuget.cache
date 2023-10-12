@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iP7Sgfj2D4O8u+WaRS6LqkzjSjL3mDgJgnFlfPPn97/2N1rU1cPf63vPRg3yLAP8slNV1B/hhRM4DazBqDOAag==",
+  "dgSpecHash": "Xnk/igvus+jMgR5M5Ev1+wKiDHDUE2dOM7fgmwqo2Pqn1R6cP10lApLiP48ZF0GUNdAK4GL8XK5dtgjEOk1Z9Q==",
   "success": true,
-  "projectFilePath": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\Core\\Core.csproj",
+  "projectFilePath": "/workspaces/NOTIAPP/Core/Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -4,20 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Repositories;
 
 namespace Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private readonly NotiApiContext _context;
+        private NotiApiContext _context;
         private IAuditoria _auditorias;
         private IBlockChain _blockchains;
-
-        public UnitOfWork(NotiApiContext context)
-        {
-        _context = context;
-            _context = context;
-        }
+        private IEstadoNotificacion _estadosnotificaciones;
+        private IFormato _formatos;
+        private IGenericoVsSubModulo _genericosvssubmodulos;
+        private IHiloRespuestaNoficacion _hilorespuestanoficaciones;
+        private IMaestroVsModulo _maestrosvsmodulos;
+        private IModuloNotificacion _modulosnotificaciones;
+        private IPermisoGenerico _permisosgenericos;
+        private IRadicado _radicados;
+        private IRol _roles;
+        private IRolVsMaestro _rolesvsmaestros;
+        private ISubModulo _submodulos;
+        private ITipoNotificacion _tiponotificaciones;
+        private ITipoRequerimiento _tiporequerimientos;
 
         public IAuditoria Auditorias
         {
@@ -30,7 +38,7 @@ namespace Infrastructure.UnitOfWork
                 return _auditorias;
             }
         }
-        public IBlockChain Blockchains
+        public IBlockChain BlockChains
         {
             get
             {
@@ -78,11 +86,11 @@ namespace Infrastructure.UnitOfWork
         {
             get
             {
-                if (_hiloRespuestanoficaciones == null)
+                if (_hilorespuestanoficaciones == null)
                 {
-                    _hiloRespuestanoficaciones = new HiloRespuestaNoficacionRepository(_context); // Remember putting the base in the repository of this entity
+                    _hilorespuestanoficaciones = new HiloRespuestaNoficacionRepository(_context); // Remember putting the base in the repository of this entity
                 }
-                return _hiloRespuestanoficaciones;
+                return _hilorespuestanoficaciones;
             }
         }
         public IMaestroVsModulo MaestrosVsModulos
@@ -91,18 +99,7 @@ namespace Infrastructure.UnitOfWork
             {
                 if (_maestrosvsmodulos == null)
                 {
-                    _maestrosvsmodulos = new MaestroIMaestroVsModuloRepository(_context); // Remember putting the base in the repository of this entity
-                }
-                return _maestrosvsmodulos;
-            }
-        }
-        public IModuloMaestro MaestrosVsModulos
-        {
-            get
-            {
-                if (_maestrosvsmodulos == null)
-                {
-                    _maestrosvsmodulos = new MaestrosVsModulosRepository(_context); // Remember putting the base in the repository of this entity
+                    _maestrosvsmodulos = new MaestroVsModuloRepository(_context); // Remember putting the base in the repository of this entity
                 }
                 return _maestrosvsmodulos;
             }
@@ -129,15 +126,15 @@ namespace Infrastructure.UnitOfWork
                 return _permisosgenericos;
             }
         }
-        public IRadicado Radicado
+        public IRadicado Radicados
         {
             get
             {
-                if (_radicado == null)
+                if (_radicados == null)
                 {
-                    _radicado = new RadicadoIRadicadoRepository(_context); // Remember putting the base in the repository of this entity
+                    _radicados = new RadicadoIRadicadoRepository(_context); // Remember putting the base in the repository of this entity
                 }
-                return _radicado;
+                return _radicados;
             }
         }
         public IRol Roles
@@ -151,16 +148,66 @@ namespace Infrastructure.UnitOfWork
                 return _roles;
             }
         }
-        public IRolVsMaestro Entities
+        public IRolVsMaestro RolesVsMaestros
         {
             get
             {
-                if (_Entities == null)
+                if (_rolesvsmaestros == null)
                 {
-                    _Entities = new RolVsMaestroRepository(_context); // Remember putting the base in the repository of this entity
+                    _rolesvsmaestros = new RolVsMaestroRepository(_context); // Remember putting the base in the repository of this entity
                 }
-                return _Entities;
+                return _rolesvsmaestros;
             }
         }
+        public ISubModulo SubModulos
+        {
+            get
+            {
+                if (_submodulos == null)
+                {
+                    _submodulos = new SubModuloRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _submodulos;
+            }
+        }
+        public ITipoNotificacion TipoNotificaciones
+        {
+            get
+            {
+                if (_tiponotificaciones == null)
+                {
+                    _tiponotificaciones = new TipoNotificacionRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _tiponotificaciones;
+            }
+        }
+        public ITipoRequerimiento TipoRequerimientos
+        {
+            get
+            {
+                if (_tiporequerimientos == null)
+                {
+                    _tiporequerimientos = new TipoRequerimientoRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _tiporequerimientos;
+            }
+        }
+
+        public UnitOfWork(NotiApiContext context)
+        {
+        _context = context;
+            _context = context;
+        }
+
+        public async Task<int> SaveAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+
     }
 }

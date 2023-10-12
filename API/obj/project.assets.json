@@ -2780,32 +2780,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\IKER\\.nuget\\packages\\": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\API\\API.csproj",
+      "projectUniqueName": "/workspaces/NOTIAPP/API/API.csproj",
       "projectName": "API",
-      "projectPath": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\IKER\\.nuget\\packages\\",
-      "outputPath": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\API\\obj\\",
+      "projectPath": "/workspaces/NOTIAPP/API/API.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/NOTIAPP/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\IKER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "/usr/local/dotnet/7.0.306/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\Infrastructure\\Infrastructure.csproj"
+            "/workspaces/NOTIAPP/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/workspaces/NOTIAPP/Infrastructure/Infrastructure.csproj"
             }
           }
         }
@@ -2878,7 +2879,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
       }
     }
   }

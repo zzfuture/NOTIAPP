@@ -6,7 +6,7 @@ using Core.Models;
 
 namespace Core.Interfaces
 {
-    public interface IHiloRespuestaNoficacion : IGenericRepository<HiloRespuestaNotificacion>
+    public interface IHiloRespuestaNotificacion : IGenericRepository<HiloRespuestaNotificacion>
     {
         
     }
