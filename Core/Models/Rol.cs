@@ -9,5 +9,6 @@ namespace Core.Models
     {
         public string Nombre { get; set; }
         public ICollection<GenericoVsSubModulo> GenericoVsSubModulos { get; set; }
+        public ICollection<RolVsMaestro> RolVsMaestros { get; set; }
     }
 }

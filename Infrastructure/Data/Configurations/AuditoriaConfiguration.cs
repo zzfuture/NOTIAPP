@@ -15,7 +15,9 @@ public class AuditoriaConfiguration : IEntityTypeConfiguration<Auditoria>
         builder.Property(c => c.Id);
 
         builder.Property(c => c.NombreUsuario).HasMaxLength(100);
-
         builder.Property(c => c.DescAccion).HasColumnType("int");
+
+        builder.Property(x => x.FechaCreacion).HasColumnType("date");
+        builder.Property(x => x.FechaModificacion).HasColumnType("date");
     }
 }

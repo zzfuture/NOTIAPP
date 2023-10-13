@@ -8,7 +8,7 @@ namespace Core.Models
     public class GenericoVsSubModulo : BaseModel
     {
         public int IdGenericos { get; set; }
-        public GenericoVsSubModulo GenericoVsSubModulos { get; set; }
+        public PermisoGenerico PermisosGenericos { get; set; }
         public int IdSubmodulos { get; set; }
         public MaestroVsSubModulo MaestroVsSubModulos { get; set; }
         public int IdRol { get; set; }

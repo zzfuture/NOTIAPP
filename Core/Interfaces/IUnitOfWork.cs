@@ -12,8 +12,8 @@ namespace Core.Interfaces
         public IEstadoNotificacion EstadosNotificaciones { get; }
         public IFormato Formatos { get; }
         public IGenericoVsSubModulo GenericosVsSubModulos { get; }
-        public IHiloRespuestaNoficacion HiloRespuestaNoficaciones { get; }
-        public IMaestroVsModulo MaestrosVsModulos { get; }
+        public IHiloRespuestaNotificacion HiloRespuestaNoficaciones { get; }
+        public IMaestroVsSubModulo MaestrosVsSubModulos { get; }
         public IModuloNotificacion ModulosNotificaciones { get; }
         public IPermisoGenerico PermisosGenericos { get; }
         public IRadicado Radicados { get; }

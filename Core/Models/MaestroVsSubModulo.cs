@@ -9,7 +9,7 @@ namespace Core.Models
     {
         public int IdMaestro { get; set; }
         public ModuloMaestro ModuloMaestros { get; set; }
-        public int Submodulo { get; set; }
+        public int IdSubmodulo { get; set; }
         public SubModulo SubModulos { get; set; }
         public ICollection<GenericoVsSubModulo> GenericoVsSubModulos { get; set; }
     }

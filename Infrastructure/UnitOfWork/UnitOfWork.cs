@@ -16,8 +16,8 @@ namespace Infrastructure.UnitOfWork
         private IEstadoNotificacion _estadosnotificaciones;
         private IFormato _formatos;
         private IGenericoVsSubModulo _genericosvssubmodulos;
-        private IHiloRespuestaNoficacion _hilorespuestanoficaciones;
-        private IMaestroVsModulo _maestrosvsmodulos;
+        private IHiloRespuestaNotificacion _hilorespuestanoficaciones;
+        private IMaestroVsSubModulo _maestrosvssubmodulos;
         private IModuloNotificacion _modulosnotificaciones;
         private IPermisoGenerico _permisosgenericos;
         private IRadicado _radicados;
@@ -82,26 +82,26 @@ namespace Infrastructure.UnitOfWork
                 return _genericosvssubmodulos;
             }
         }
-        public IHiloRespuestaNoficacion HiloRespuestaNoficaciones
+        public IHiloRespuestaNotificacion HiloRespuestaNoficaciones
         {
             get
             {
                 if (_hilorespuestanoficaciones == null)
                 {
-                    _hilorespuestanoficaciones = new HiloRespuestaNoficacionRepository(_context); // Remember putting the base in the repository of this entity
+                    _hilorespuestanoficaciones = new HiloRespuestaNotificacionRepository(_context); // Remember putting the base in the repository of this entity
                 }
                 return _hilorespuestanoficaciones;
             }
         }
-        public IMaestroVsModulo MaestrosVsModulos
+        public IMaestroVsSubModulo MaestrosVsSubModulos
         {
             get
             {
-                if (_maestrosvsmodulos == null)
+                if (_maestrosvssubmodulos == null)
                 {
-                    _maestrosvsmodulos = new MaestroVsModuloRepository(_context); // Remember putting the base in the repository of this entity
+                    _maestrosvssubmodulos = new MaestroVsSubModuloRepository(_context); // Remember putting the base in the repository of this entity
                 }
-                return _maestrosvsmodulos;
+                return _maestrosvssubmodulos;
             }
         }
         public IModuloNotificacion ModulosNotificaciones
@@ -132,7 +132,7 @@ namespace Infrastructure.UnitOfWork
             {
                 if (_radicados == null)
                 {
-                    _radicados = new RadicadoIRadicadoRepository(_context); // Remember putting the base in the repository of this entity
+                    _radicados = new RadicadoRepository(_context); // Remember putting the base in the repository of this entity
                 }
                 return _radicados;
             }

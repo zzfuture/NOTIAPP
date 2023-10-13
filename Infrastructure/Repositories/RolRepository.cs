@@ -21,6 +21,7 @@ namespace Infrastructure.Repositories
         {
             return await _context.Roles
             .Include(x => x.GenericoVsSubModulos)
+            .Include(x => x.RolVsMaestros)
             .ToListAsync();
         }
         public override async Task<(int totalRegistros, IEnumerable<Rol> registros)> GetAllAsync( //Sobrecarga de metodos

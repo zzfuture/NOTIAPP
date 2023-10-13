@@ -2780,19 +2780,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\APM02-51\\.nuget\\packages\\": {}
+    "C:\\Users\\IKER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\API.csproj",
+      "projectUniqueName": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\APM02-51\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\obj\\",
+      "projectPath": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\IKER\\.nuget\\packages\\",
+      "outputPath": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\APM02-51\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\IKER\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2804,8 +2804,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\Infrastructure.csproj"
+            "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "E:\\PROGRAMACION\\CAMPUS\\NET CORE\\databases\\NOTIAPP\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -2878,7 +2878,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
