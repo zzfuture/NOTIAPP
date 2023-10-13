@@ -55,10 +55,10 @@ public class AuditoriaController : BaseController
             AuditoriaDto.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
             Auditoria.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
         }
-        if (AuditoriaDto.FechaMo == TimeOnly.MinValue)
+        if (AuditoriaDto.FechaModificacion == DateOnly.MinValue)
         {
-            AuditoriaDto.HoraAuditoria = TimeOnly.FromDateTime(DateTime.Now);
-            Auditoria.HoraAuditoria = TimeOnly.FromDateTime(DateTime.Now);
+            AuditoriaDto.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
+            Auditoria.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
         }
         _unitOfWork.Auditorias.Add(Auditoria);
         await _unitOfWork.SaveAsync();
@@ -86,6 +86,7 @@ public class AuditoriaController : BaseController
         }
         var Auditoria = _mapper.Map<Auditoria>(AuditoriaDto);
         AuditoriaDto.Id = Auditoria.Id;
+        AuditoriaDto.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
         _unitOfWork.Auditorias.Update(Auditoria);
         await _unitOfWork.SaveAsync();
         return AuditoriaDto;
