@@ -78,5 +78,18 @@ namespace API.Controllers
             await _unitOfWork.SaveAsync();
             return BlockchainDto;
         }
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<BlockchainDto>> Delete(int id){
+            var blockchain = await _unitOfWork.BlockChains.GetByIdAsync(id);
+            if (blockchain is null){
+                return NotFound();
+            }
+            _unitOfWork.BlockChains.Remove(blockchain);
+            return NoContent();
+        }
+        
     }
 }

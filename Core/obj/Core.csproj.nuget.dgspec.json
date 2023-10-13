@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/NOTIAPP/Core/Core.csproj": {}
+    "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj": {}
   },
   "projects": {
-    "/workspaces/NOTIAPP/Core/Core.csproj": {
+    "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/NOTIAPP/Core/Core.csproj",
+        "projectUniqueName": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "/workspaces/NOTIAPP/Core/Core.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/NOTIAPP/Core/obj/",
+        "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\APM02-51\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\APM02-51\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

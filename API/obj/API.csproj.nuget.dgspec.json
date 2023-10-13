@@ -1,34 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/NOTIAPP/API/API.csproj": {}
+    "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\API.csproj": {}
   },
   "projects": {
-    "/workspaces/NOTIAPP/API/API.csproj": {
+    "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/NOTIAPP/API/API.csproj",
+        "projectUniqueName": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "/workspaces/NOTIAPP/API/API.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/NOTIAPP/API/obj/",
+        "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\APM02-51\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\APM02-51\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/local/dotnet/7.0.306/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/workspaces/NOTIAPP/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/workspaces/NOTIAPP/Infrastructure/Infrastructure.csproj"
+              "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -101,21 +100,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/workspaces/NOTIAPP/Core/Core.csproj": {
+    "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/NOTIAPP/Core/Core.csproj",
+        "projectUniqueName": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "/workspaces/NOTIAPP/Core/Core.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/NOTIAPP/Core/obj/",
+        "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\APM02-51\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\APM02-51\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -154,21 +153,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/workspaces/NOTIAPP/Infrastructure/Infrastructure.csproj": {
+    "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/NOTIAPP/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/workspaces/NOTIAPP/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/NOTIAPP/Infrastructure/obj/",
+        "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\APM02-51\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\APM02-51\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -180,8 +179,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/workspaces/NOTIAPP/Core/Core.csproj": {
-                "projectPath": "/workspaces/NOTIAPP/Core/Core.csproj"
+              "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\APM02-51\\Documents\\IKER\\db\\NOTIAPP\\Core\\Core.csproj"
               }
             }
           }
@@ -225,7 +224,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.306/sdk/7.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
