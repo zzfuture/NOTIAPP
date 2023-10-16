@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace API.Dtos
 {
-    public class ModuloMaestroDto
+    public class ModuloMaestroDto : BaseDto
     {
         public string NombreModulo { get; set; }
     }

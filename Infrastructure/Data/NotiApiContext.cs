@@ -8,7 +8,11 @@ using Microsoft.EntityFrameworkCore;
 namespace Infrastructure.Data
 {
     public class NotiApiContext : DbContext
+    
     {
+        public NotiApiContext(DbContextOptions options) : base(options)
+        {
+        }
         public DbSet<Auditoria> Auditorias { get; set;}
         public DbSet<Blockchain> Blockchains { get; set;}
         public DbSet<EstadoNotificacion> EstadoNotificaciones { get; set;}

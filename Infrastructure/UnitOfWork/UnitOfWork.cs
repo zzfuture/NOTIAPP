@@ -18,6 +18,7 @@ namespace Infrastructure.UnitOfWork
         private IGenericoVsSubModulo _genericosvssubmodulos;
         private IHiloRespuestaNotificacion _hilorespuestanoficaciones;
         private IMaestroVsSubModulo _maestrosvssubmodulos;
+        private IModuloMaestro _modulosmaestros;
         private IModuloNotificacion _modulosnotificaciones;
         private IPermisoGenerico _permisosgenericos;
         private IRadicado _radicados;
@@ -102,6 +103,17 @@ namespace Infrastructure.UnitOfWork
                     _maestrosvssubmodulos = new MaestroVsSubModuloRepository(_context); // Remember putting the base in the repository of this entity
                 }
                 return _maestrosvssubmodulos;
+            }
+        }
+        public IModuloMaestro ModulosMaestros
+        {
+            get
+            {
+                if (_modulosmaestros == null)
+                {
+                    _modulosmaestros = new ModuloMaestroRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _modulosmaestros;
             }
         }
         public IModuloNotificacion ModulosNotificaciones

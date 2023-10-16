@@ -14,6 +14,7 @@ namespace Core.Interfaces
         public IGenericoVsSubModulo GenericosVsSubModulos { get; }
         public IHiloRespuestaNotificacion HiloRespuestaNoficaciones { get; }
         public IMaestroVsSubModulo MaestrosVsSubModulos { get; }
+        public IModuloMaestro ModulosMaestros { get; }
         public IModuloNotificacion ModulosNotificaciones { get; }
         public IPermisoGenerico PermisosGenericos { get; }
         public IRadicado Radicados { get; }

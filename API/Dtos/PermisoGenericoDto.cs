@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace API.Dtos
 {
-    public class PermisoGenericoDto
+    public class PermisoGenericoDto : BaseDto
     {
         public string NombrePermiso { get; set; }
     }
