@@ -1,6 +1,6 @@
-# Creation of EF Code First SQL
+# Creacion de proyecto
 
-- [Project Creation](#Project-creation)
+- [Creacion de proyecto](#Creacion-de-proyecto)
   
   1. [Creacion de Solución](#creaci%C3%B3n-de-soluci%C3%B3n)
   
@@ -73,7 +73,7 @@
     
     - [UnitOfWork.cs](#UnitOfWork)
 
-## Project creation
+## 
 
 # Creación de Solución
 
@@ -117,6 +117,8 @@ dotnet add reference ..\Core
 
 ## Proyecto WebApi
 
+Nota. Recuerde que los paquetes se instalan desde la carpeta de en este ejemplo (API)
+
 ```bash
 dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 7.0.11
 dotnet add package Microsoft.EntityFrameworkCore --version 7.0.11
@@ -130,13 +132,15 @@ dotnet add package Microsoft.AspNetCore.RateLimiting
 
 ## Proyecto Infrastructure
 
+Nota. Recuerde que los paquetes se instalan desde la carpeta de en este ejemplo (Infrastructure)
+
 ```bash
 dotnet add package Pomelo.EntityFrameworkCore.MySql --version 7.0.0
 dotnet add package Microsoft.EntityFrameworkCore --version 7.0.11
 dotnet add package CsvHelper --version 30.0.1
 ```
 
-#### Directories
+#### Directorios
 
 https://i.imgur.com/fE83ztj.png
 
@@ -159,7 +163,7 @@ public class BaseController : Controller
 }
 ```
 
-### Controller Layout
+### ExampleController
 
 ```dotnet
 using System;
@@ -824,154 +828,221 @@ using Core.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 
-namespace Infrastructure.UnitOfWork;
-
-public class UnitOfWork : IUnitOfWork, IDisposable
+namespace Infrastructure.UnitOfWork
 {
-    private readonly AnimalsContext _context;
-    private PaisRepository _paises;
-    private CiudadRepository _ciudades;
-    private DepartamentoRepository _departamentos;
-    private ClienteRepository _clientes;
-    private MascotaRepository _mascotas;
-    private RazaRepository _razas;
-    private ClienteTelRepository _clientestel;
-    private ClienteDirRepository _clientesdir;
-    private ServicioRepository _servicios;
-    private CitaRepository _citas;
+    public class UnitOfWork : IUnitOfWork, IDisposable
+    {
+        private NotiApiContext _context;
+        private IAuditoria _auditorias;
+        private IBlockChain _blockchains;
+        private IEstadoNotificacion _estadosnotificaciones;
+        private IFormato _formatos;
+        private IGenericoVsSubModulo _genericosvssubmodulos;
+        private IHiloRespuestaNotificacion _hilorespuestanoficaciones;
+        private IMaestroVsSubModulo _maestrosvssubmodulos;
+        private IModuloMaestro _modulosmaestros;
+        private IModuloNotificacion _modulosnotificaciones;
+        private IPermisoGenerico _permisosgenericos;
+        private IRadicado _radicados;
+        private IRol _roles;
+        private IRolVsMaestro _rolesvsmaestros;
+        private ISubModulo _submodulos;
+        private ITipoNotificacion _tiponotificaciones;
+        private ITipoRequerimiento _tiporequerimientos;
 
-    public IPaisRepository Paises
-    {
-        get
+        public IAuditoria Auditorias
         {
-            if (_paises == null)
+            get
             {
-                _paises = new PaisRepository(_context);
+                if (_auditorias == null)
+                {
+                    _auditorias = new AuditoriaRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _auditorias;
             }
-            return _paises;
         }
-    }
+        public IBlockChain BlockChains
+        {
+            get
+            {
+                if (_blockchains == null)
+                {
+                    _blockchains = new BlockChainRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _blockchains;
+            }
+        }
+        public IEstadoNotificacion EstadosNotificaciones
+        {
+            get
+            {
+                if (_estadosnotificaciones == null)
+                {
+                    _estadosnotificaciones = new EstadoNotificacionRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _estadosnotificaciones;
+            }
+        }
+        public IFormato Formatos
+        {
+            get
+            {
+                if (_formatos == null)
+                {
+                    _formatos = new FormatoRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _formatos;
+            }
+        }
+        public IGenericoVsSubModulo GenericosVsSubModulos
+        {
+            get
+            {
+                if (_genericosvssubmodulos == null)
+                {
+                    _genericosvssubmodulos = new GenericoVsIGenericoVsSubModuloRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _genericosvssubmodulos;
+            }
+        }
+        public IHiloRespuestaNotificacion HiloRespuestaNoficaciones
+        {
+            get
+            {
+                if (_hilorespuestanoficaciones == null)
+                {
+                    _hilorespuestanoficaciones = new HiloRespuestaNotificacionRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _hilorespuestanoficaciones;
+            }
+        }
+        public IMaestroVsSubModulo MaestrosVsSubModulos
+        {
+            get
+            {
+                if (_maestrosvssubmodulos == null)
+                {
+                    _maestrosvssubmodulos = new MaestroVsSubModuloRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _maestrosvssubmodulos;
+            }
+        }
+        public IModuloMaestro ModulosMaestros
+        {
+            get
+            {
+                if (_modulosmaestros == null)
+                {
+                    _modulosmaestros = new ModuloMaestroRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _modulosmaestros;
+            }
+        }
+        public IModuloNotificacion ModulosNotificaciones
+        {
+            get
+            {
+                if (_modulosnotificaciones == null)
+                {
+                    _modulosnotificaciones = new ModuloNotificacionRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _modulosnotificaciones;
+            }
+        }
+        public IPermisoGenerico PermisosGenericos
+        {
+            get
+            {
+                if (_permisosgenericos == null)
+                {
+                    _permisosgenericos = new PermisoGenericoRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _permisosgenericos;
+            }
+        }
+        public IRadicado Radicados
+        {
+            get
+            {
+                if (_radicados == null)
+                {
+                    _radicados = new RadicadoRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _radicados;
+            }
+        }
+        public IRol Roles
+        {
+            get
+            {
+                if (_roles == null)
+                {
+                    _roles = new RolRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _roles;
+            }
+        }
+        public IRolVsMaestro RolesVsMaestros
+        {
+            get
+            {
+                if (_rolesvsmaestros == null)
+                {
+                    _rolesvsmaestros = new RolVsMaestroRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _rolesvsmaestros;
+            }
+        }
+        public ISubModulo SubModulos
+        {
+            get
+            {
+                if (_submodulos == null)
+                {
+                    _submodulos = new SubModuloRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _submodulos;
+            }
+        }
+        public ITipoNotificacion TipoNotificaciones
+        {
+            get
+            {
+                if (_tiponotificaciones == null)
+                {
+                    _tiponotificaciones = new TipoNotificacionRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _tiponotificaciones;
+            }
+        }
+        public ITipoRequerimiento TipoRequerimientos
+        {
+            get
+            {
+                if (_tiporequerimientos == null)
+                {
+                    _tiporequerimientos = new TipoRequerimientoRepository(_context); // Remember putting the base in the repository of this entity
+                }
+                return _tiporequerimientos;
+            }
+        }
 
-    public ICiudadRepository Ciudades
-    {
-        get
+        public UnitOfWork(NotiApiContext context)
         {
-            if (_ciudades == null)
-            {
-                _ciudades = new CiudadRepository(_context);
-            }
-            return _ciudades;
-        }
-    }
-
-    public IClienteRepository Clientes
-    {
-        get
-        {
-            if (_clientes == null)
-            {
-                _clientes = new ClienteRepository(_context);
-            }
-            return _clientes;
-        }
-    }
-
-    public IDepartamentoRepository Departamentos
-    {
-        get
-        {
-            if (_departamentos == null)
-            {
-                _departamentos = new DepartamentoRepository(_context);
-            }
-            return _departamentos;
-        }
-    }
-
-    public IMascotaRepository Mascotas
-    {
-        get
-        {
-            if (_mascotas == null)
-            {
-                _mascotas = new MascotaRepository(_context);
-            }
-            return _mascotas;
-        }
-    }
-
-    public IRazaRepository Razas
-    {
-        get
-        {
-            if (_razas == null)
-            {
-                _razas = new RazaRepository(_context);
-            }
-            return _razas;
-        }
-    }
-
-    public IServicioRepository Servicios
-    {
-        get
-        {
-            if (_servicios == null)
-            {
-                _servicios = new ServicioRepository(_context);
-            }
-            return _servicios;
-        }
-    }
-
-    public IClienteTelRepository ClienteTel
-    {
-        get
-        {
-            if (_clientestel == null)
-            {
-                _clientestel = new ClienteTelRepository(_context);
-            }
-            return _clientestel;
-        }
-    }
-
-    public IClienteDirRepository ClientesDir
-    {
-        get
-        {
-            if (_clientesdir == null)
-            {
-                _clientesdir = new ClienteDirRepository(_context);
-            }
-            return _clientesdir;
-        }
-    }
-        public ICitaRepository Citas
-    {
-        get
-        {
-            if (_citas == null)
-            {
-                _citas = new CitaRepository(_context);
-            }
-            return _citas;
-        }
-    }
-
-    public UnitOfWork(AnimalsContext context)
-    {
         _context = context;
-    }
+            _context = context;
+        }
 
-    public async Task<int> SaveAsync()
-    {
-        return await _context.SaveChangesAsync();
-    }
+        public async Task<int> SaveAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
 
-    public void Dispose()
-    {
-        _context.Dispose();
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+
     }
 }
 ```
