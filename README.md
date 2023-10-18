@@ -98,7 +98,7 @@ El folder destino corresponde a la carpeta donde se creara el proyecto. Se recom
 
 # Agregar proyectos a la solucion
 
-```dotnet
+```csharp
 dotnet sln add ApiAnimals
 dotnet sln add Core
 dotnet sln add Infrastructure
@@ -150,7 +150,7 @@ https://i.imgur.com/fE83ztj.png
 
 ### BaseController
 
-```dotnet
+```csharp
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -165,7 +165,7 @@ public class BaseController : Controller
 
 ### ExampleController
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -279,7 +279,7 @@ public class AuditoriaController : BaseController
 
 ### Dtos
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -300,7 +300,7 @@ namespace API.Dtos
 
 ### ApplicationServicesExtension
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -357,7 +357,7 @@ public static class ApplicationServicesExtension
 
 #### Pager
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -408,7 +408,7 @@ public class Pager<T> where T : class
 
 ### Params
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -447,7 +447,7 @@ public class Params
 
 #### MappingProfiles
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -499,7 +499,7 @@ public class MappingProfiles : Profile
 
 ### Program
 
-```dotnet
+```csharp
 using System.Reflection;
 using API.Extensions;
 using AspNetCoreRateLimit;
@@ -559,7 +559,7 @@ app.Run();
 
 #### IGenericRepository
 
-```dotnet
+```csharp
 using System.Linq.Expressions;
 using Core.Entities;
 
@@ -581,7 +581,7 @@ public interface IGenericRepository<T> where T : BaseEntity
 
 #### IUnitOfWork
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -618,7 +618,7 @@ namespace Core.Interfaces
 
 #### DbContext
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -657,7 +657,7 @@ namespace Infrastructure.Data
 
 ### Configuration
 
-```dotnet
+```csharp
 using System.IO.Compression;
 using Core.Models;
 using Microsoft.EntityFrameworkCore;
@@ -686,7 +686,7 @@ public class BlockchainConfiguration : IEntityTypeConfiguration<Blockchain>
 
 #### GenericRepository
 
-```dotnet
+```csharp
 using System.Linq.Expressions;
 using Core.Models;
 using Core.Interfaces;
@@ -768,7 +768,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseModel
 
 #### ExampleRepository
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -819,7 +819,7 @@ namespace Infrastructure.Repositories
 
 ### UnitOfWork
 
-```dotnet
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
